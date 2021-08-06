@@ -30,21 +30,15 @@ public class BikeService implements BikeInter{
 	
 
 	@Override
-	public Bike[] getAll() {
-		// TODO Auto-generated method stub
-		return allBikes();
-	}
-
-	@Override
 	public Bike[] getbyName(String name) throws BikeNotFoundException {
 		// TODO Auto-generated method stub
 		boolean b=false;
-		int x=0;
+		int initial=0;
 		Bike[] abike=new Bike[5];
 		for (Bike bike : allBikes()) {
 			if ((bike.getName()).equals(name)) {
 				b = true;
-				abike[x++] = bike;
+				abike[initial++] = bike;
 			}
 
 		}
@@ -55,6 +49,13 @@ public class BikeService implements BikeInter{
 		return abike;
 		
 	}
+	
+	@Override
+	public Bike[] getAll() {
+		// TODO Auto-generated method stub
+		return allBikes();
+	}
+	
 	private Bike[] allBikes() {
 		Bike[] bBike = new Bike[5];
 		bBike[0] = new Bike("YAHAMA","RED","R15",50000d);
