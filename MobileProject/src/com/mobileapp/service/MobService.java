@@ -34,12 +34,12 @@ public class MobService implements MobileService {
 		@Override
 		public Mobile[] getbyBrand(String brand) throws MobException {
 			boolean b=false;
-			int i=0;
+			int initial=0;
 			Mobile[] umobile=new Mobile[6];
 			for (Mobile mobile : allMobiles()) {
 				if ((mobile.getBrand()).equals(brand)) {
 					b = true;
-					umobile[i++] = mobile;
+					umobile[initial++] = mobile;
 				}
 
 			}
